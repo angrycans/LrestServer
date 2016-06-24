@@ -29,7 +29,7 @@ public class RedisSessionManager implements SessionManager{
 
     public RedisSessionManager() {
         if (Config.use_redis==1) {
-            this.expirationUpdateInterval = 60 * 1000;
+            this.expirationUpdateInterval = 30 * 1000;
             this.sessionTimeOut = 1 * 60 * 1000;
             if (jedisPool == null) {
                 createJedisPool(Config.redis_ip, Config.redis_port);
@@ -71,7 +71,7 @@ public class RedisSessionManager implements SessionManager{
         String sid=genUUID();
         String info=_token+" "+_uid+" "+System.currentTimeMillis();
 
-        jedisPool.getResource().setex(SESSION_ID_PREFIX+sid+":INFO",sessionTimeOut,info);
+        jedisPool.getResource().setex(SESSION_ID_PREFIX+sid+":INFO",Config.session_timeout,info);
         log.info(SESSION_ID_PREFIX+sid+":INFO"+" "+info);
         return sid;
     }
@@ -85,8 +85,20 @@ public class RedisSessionManager implements SessionManager{
         if (info==null){
             return null;
         }else{
-            log.info(info.substring(info.lastIndexOf(" "),info.length()-1));
-            return info;
+            log.info(info);
+            log.info(info.substring(0,info.lastIndexOf(" ")));
+            log.info(info.substring(info.lastIndexOf(" ")+1,info.length()));
+            //String info=_token+" "+_uid+" "+System.currentTimeMillis();
+
+            if (System.currentTimeMillis()-Long.parseLong(info.substring(info.lastIndexOf(" ")+1,info.length()))<expirationUpdateInterval){
+                log.info("diff time "+(System.currentTimeMillis()-Long.parseLong(info.substring(info.lastIndexOf(" ")+1,info.length()))));
+                return info;
+            }else{
+                String newinfo=info.substring(0,info.lastIndexOf(" "))+" "+System.currentTimeMillis();
+                jedisPool.getResource().setex(SESSION_ID_PREFIX+_sid+":INFO",Config.session_timeout,newinfo);
+                return newinfo;
+            }
+
         }
 
 

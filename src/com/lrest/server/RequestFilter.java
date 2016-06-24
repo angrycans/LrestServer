@@ -52,14 +52,16 @@ public class RequestFilter implements ContainerRequestFilter
         }
 
 
+        //ignore session auth api
+        if (requestContext.getUriInfo().getPath().equalsIgnoreCase("login")){
+            //go to login  auth sid
+            return;
+        }
+
         String sid = requestContext.getHeaderString("sessionid");
         if (StringUtils.isNullOrEmpty(sid)){
-            if (requestContext.getUriInfo().getPath().equalsIgnoreCase("login")){
-                //go to login  auth sid
-            }else{
-                requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).entity(systemManager.LASTERR).build());
-                return;
-            }
+            requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).entity(systemManager.LASTERR).build());
+            return;
 
         }else{
             //auth sid expired

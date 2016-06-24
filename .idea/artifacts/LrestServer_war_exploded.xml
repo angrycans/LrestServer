@@ -8,7 +8,70 @@
           <element id="module-output" name="LrestServer" />
           <element id="dir-copy" path="$PROJECT_DIR$/jOOQ-lib" />
         </element>
-        <element id="directory" name="lib" />
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.portlet:portlet-api:2.0" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.36" />
+          <element id="library" level="project" name="Maven: org.jooq:jooq-codegen:3.8.2" />
+          <element id="library" level="project" name="Maven: org.jooq:jooq-meta:3.8.2" />
+          <element id="library" level="project" name="Maven: org.jooq:jooq:3.8.2" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/aopalliance-1.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/aopalliance-repackaged-2.4.0-b34.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/asm-debug-all-5.0.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/classmate-1.0.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-logging.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-pool2-2.4.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/embedded-jetty_9.2-1.2.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/grizzly-framework-2.3.16.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/grizzly-http-2.3.16.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/grizzly-http-server-2.3.16.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/grizzly-http-servlet-2.3.16.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/gson-2.7.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/guava-18.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/guice-4.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/guice-bridge-2.4.0-b10.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/guice-servlet-4.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/hibernate-validator-5.1.2.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/HikariCP-2.4.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/hk2-api-2.4.0-b34.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/hk2-locator-2.4.0-b34.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/hk2-utils-2.4.0-b34.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jackson-annotations-2.5.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jackson-core-2.5.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jackson-databind-2.5.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javassist-3.20.0-GA.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javax.annotation-api-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javax.el-2.2.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javax.el-api-2.2.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javax.inject-1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javax.inject-2.4.0-b34.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javax.inject.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javax.servlet-api-3.1.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javax.ws.rs-api-2.0.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jboss-logging-3.1.3.GA.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jedis-2.8.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jersey-bean-validation-2.17.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jersey-client-2.23.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jersey-common-2.23.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jersey-container-servlet-2.23.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jersey-container-servlet-core-2.23.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jersey-guava-2.23.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jersey-media-jaxb-2.23.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jersey-server-2.23.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jul-to-slf4j-1.7.12.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/logback-classic-1.1.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/logback-core-1.1.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.39.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/org.eclipse.persistence.antlr-2.5.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/org.eclipse.persistence.asm-2.5.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/org.eclipse.persistence.core-2.5.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/org.eclipse.persistence.moxy-2.5.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/org.osgi.core-4.2.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/osgi-resource-locator-1.0.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/persistence-api-1.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/slf4j-api-1.7.21.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/slf4j-simple-1.7.21.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/validation-api-1.1.0.Final.jar" />
+        </element>
       </element>
     </root>
   </artifact>

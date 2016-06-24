@@ -30,7 +30,7 @@ public class ServerListener implements ServletContextListener {
 
 			//log.debug("resouce mysql="+resourceBoudle.getString("mysql"));
 
-			Config.sesssion_timeout=Integer.parseInt(resourceBoudle.getString("sesssion_timeout"));
+			Config.session_timeout=Integer.parseInt(resourceBoudle.getString("session_timeout"));
 
 			Config.use_mysql=Integer.parseInt(resourceBoudle.getString("use_mysql"));
 			Config.mysql_jdbcurl=resourceBoudle.getString("mysql_jdbcurl");

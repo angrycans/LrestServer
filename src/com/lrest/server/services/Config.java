@@ -20,7 +20,7 @@ redis_port=6379
 
  */
 public class Config {
-    public static int sesssion_timeout;
+    public static int session_timeout;
 
     public static int use_mysql;
     public static String mysql_jdbcurl;

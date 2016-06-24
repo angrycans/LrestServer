@@ -45,7 +45,9 @@ public class MemorySessionManager implements SessionManager{
 
         log.info(info.substring(info.lastIndexOf(" "),info.length()-1));
 
-        if (System.currentTimeMillis()-Long.parseLong(info.substring(info.lastIndexOf(" "),info.length()-1))>Config.sesssion_timeout){
+        if (System.currentTimeMillis()-Long.parseLong(info.substring(info.lastIndexOf(" ")+1,info.length()))>Config.session_timeout){
+
+            session.remove(_sid);
             return  null;
         }
 
