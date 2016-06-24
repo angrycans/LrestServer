@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="LrestServer:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/LrestServer_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="LrestServer/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="LrestServer" />
+          <element id="dir-copy" path="$PROJECT_DIR$/jOOQ-lib" />
+        </element>
+        <element id="directory" name="lib" />
+      </element>
+    </root>
+  </artifact>
+</component>
