@@ -6,22 +6,24 @@
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
-    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
-      <schema id="1" name="testdb"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="testdb">
+        <visible>1</visible>
+      </schema>
       <table id="2" parent="1" name="tusers"/>
       <column id="3" parent="2" name="id">
         <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
+        <data-type>int(11)|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
       <column id="4" parent="2" name="name">
-        <data-type>varchar(36)</data-type>
+        <data-type>varchar(36)|0</data-type>
       </column>
       <column id="5" parent="2" name="password">
-        <data-type>varchar(16)</data-type>
+        <data-type>varchar(16)|0</data-type>
       </column>
       <column id="6" parent="2" name="token">
-        <data-type>varchar(32)</data-type>
+        <data-type>varchar(32)|0</data-type>
       </column>
       <key id="7" parent="2" name="PRIMARY">
         <columns>id</columns>

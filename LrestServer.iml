@@ -20,7 +20,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
+    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
       <library>
@@ -32,10 +32,6 @@
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="Maven: org.jooq:jooq-codegen:3.8.2" level="project" />
-    <orderEntry type="library" name="Maven: org.jooq:jooq:3.8.2" level="project" />
-    <orderEntry type="library" name="Maven: org.jooq:jooq-meta:3.8.2" level="project" />
-    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.36" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.portlet:portlet-api:2.0" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

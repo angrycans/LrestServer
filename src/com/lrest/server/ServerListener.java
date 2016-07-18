@@ -3,6 +3,7 @@ package com.lrest.server;
 
 import com.lrest.server.services.Config;
 import com.lrest.server.services.DB;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletContext;
@@ -46,7 +47,10 @@ public class ServerListener implements ServletContextListener {
 			// LOGGER.error("Error loading messages properties", ex);
 		}
 
-		DB db=new DB();
+
+		if (Config.use_mysql==1) {
+			DB db = new DB();
+		}
 		
 
 	}

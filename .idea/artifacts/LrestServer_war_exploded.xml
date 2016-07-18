@@ -9,11 +9,6 @@
           <element id="dir-copy" path="$PROJECT_DIR$/jOOQ-lib" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: javax.portlet:portlet-api:2.0" />
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.36" />
-          <element id="library" level="project" name="Maven: org.jooq:jooq-codegen:3.8.2" />
-          <element id="library" level="project" name="Maven: org.jooq:jooq-meta:3.8.2" />
-          <element id="library" level="project" name="Maven: org.jooq:jooq:3.8.2" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/aopalliance-1.0.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/aopalliance-repackaged-2.4.0-b34.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/asm-debug-all-5.0.4.jar" />
