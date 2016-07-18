@@ -89,14 +89,14 @@ public class LoginController extends BaseController{
                 log.info("3 "+result.formatJSON());
 
 
-                return successRespond(null);
+                return successRespond();
 
             } catch (Exception e) {
                 e.printStackTrace();
                 return "";
             }
         }else{
-            return successRespond(null);
+            return successRespond();
         }
 
 

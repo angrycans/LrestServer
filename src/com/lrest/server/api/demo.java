@@ -16,7 +16,7 @@ import javax.ws.rs.core.MediaType;
 /**
  * Created by acans on 16/6/23.
  */
-@Path("/demotest")
+@Path("/")
 public class demo {
     @GET
     @Produces(MediaType.APPLICATION_JSON)

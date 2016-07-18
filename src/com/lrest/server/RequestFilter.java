@@ -53,7 +53,9 @@ public class RequestFilter implements ContainerRequestFilter
 
 
         //ignore session auth api
-        if (requestContext.getUriInfo().getPath().equalsIgnoreCase("login")){
+        if (requestContext.getUriInfo().getPath().equalsIgnoreCase("login")
+                ||requestContext.getUriInfo().getPath().equalsIgnoreCase("")
+           ){
             //go to login  auth sid
             return;
         }

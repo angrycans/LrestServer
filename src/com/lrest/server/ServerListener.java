@@ -3,6 +3,7 @@ package com.lrest.server;
 
 import com.lrest.server.services.Config;
 import com.lrest.server.services.DB;
+import com.lrest.server.services.SystemManager;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.slf4j.LoggerFactory;
 
@@ -50,6 +51,8 @@ public class ServerListener implements ServletContextListener {
 
 		if (Config.use_mysql==1) {
 			DB db = new DB();
+		}else{
+			SystemManager.putCode(1,1,"");
 		}
 		
 

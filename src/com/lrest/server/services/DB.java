@@ -21,7 +21,9 @@ public class DB {
 
 
     public DB(){
-        dbinit();
+
+            dbinit();
+
     }
 
 

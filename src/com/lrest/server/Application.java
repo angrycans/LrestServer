@@ -33,22 +33,15 @@ import java.util.ResourceBundle;
 @WebServlet(loadOnStartup = 1)
 @ApplicationPath("/api/*")
 
-
-
-
 public class Application extends ResourceConfig {
     private final Logger log = LoggerFactory.getLogger(getClass());
-
-
 
     @Inject
     public Application(ServiceLocator serviceLocator) {
 
-
         packages("com.lrest.server");
 
         System.out.println("Registering injectables...");
-
 
 
         Injector injector = Guice.createInjector(new GuiceModule());
