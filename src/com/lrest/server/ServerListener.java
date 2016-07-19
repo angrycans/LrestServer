@@ -4,7 +4,7 @@ package com.lrest.server;
 import com.lrest.server.services.Config;
 import com.lrest.server.services.DB;
 import com.lrest.server.services.SystemManager;
-import org.eclipse.persistence.annotations.CascadeOnDelete;
+//import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletContext;
