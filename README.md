@@ -10,3 +10,6 @@ a lightweight restful http server
 4.use redis manage session
 
 5.use jooq manage db schema
+
+
+change to maven project
