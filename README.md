@@ -7,6 +7,6 @@ a lightweight restful http server
 
 3.use gson replace jackson
 
-4.use redis manager session
+4.use redis manage session
 
-5.use jooq manager db schema
+5.use jooq manage db schema
