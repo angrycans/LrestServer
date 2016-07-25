@@ -67,6 +67,9 @@
         </dependency>
 
 
+
+
+
         <!--数据库schema代码生成器 -->
         <dependency>
             <groupId>org.jooq</groupId>
@@ -131,6 +134,21 @@
             <groupId>com.google.inject.extensions</groupId>
             <artifactId>guice-servlet</artifactId>
             <version>4.1.0</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit -->
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>retrofit</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.reactivex/rxjava -->
+        <dependency>
+            <groupId>io.reactivex</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>1.1.7</version>
         </dependency>
 
     </dependencies>

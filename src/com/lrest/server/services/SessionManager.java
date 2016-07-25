@@ -10,5 +10,4 @@ public abstract interface SessionManager {
     public void delSID(String _sid);
 
 
-
 }
