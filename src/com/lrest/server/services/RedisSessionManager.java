@@ -2,18 +2,14 @@ package com.lrest.server.services;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPoolConfig;
 
-import javax.inject.Singleton;
 import java.util.UUID;
 
 /**
  * Created by acans on 16/6/21.
  */
 
-public class RedisSessionManager implements SessionManager{
+public class RedisSessionManager implements SessionManager {
     private static  final Logger log = LoggerFactory.getLogger("RedisSessionManager");
     //redis schema
     //LSESSION:ID:INFO  {token userid last_at} expired
@@ -25,15 +21,13 @@ public class RedisSessionManager implements SessionManager{
     //Session过期时间
     private static int sessionTimeOut;
 
-    private static JedisPool jedisPool;
+    //private static JedisPool jedisPool;
 
     public RedisSessionManager() {
         if (Config.use_redis==1) {
             this.expirationUpdateInterval = 30 * 1000;
             this.sessionTimeOut = 1 * 60 * 1000;
-            if (jedisPool == null) {
-                createJedisPool(Config.redis_ip, Config.redis_port);
-            }
+
 
         }else{
             SystemManager.putCode(1,2,"");
@@ -41,25 +35,7 @@ public class RedisSessionManager implements SessionManager{
     }
 
 
-    public void createJedisPool(String redisIp,int redisPort){
 
-        try {
-            JedisPoolConfig config = new JedisPoolConfig();
-            jedisPool = new JedisPool(config, redisIp, redisPort, 2000);
-
-            jedisPool.getResource();
-            SystemManager.putCode(1,2,"");
-            log.info("--------------RedisSessionManager createJedisPool ok----------------");
-        }catch (Exception e){
-            //e.printStackTrace();
-            log.error("--------------RedisSessionManager init error----------------");
-        }
-
-
-        //Jedis redis=jedisPool.getResource();
-
-
-    }
 
     private static String genUUID() {
         return UUID.randomUUID().toString().replace("-", "").toUpperCase();
@@ -71,7 +47,7 @@ public class RedisSessionManager implements SessionManager{
         String sid=genUUID();
         String info=_token+" "+_uid+" "+System.currentTimeMillis();
 
-        jedisPool.getResource().setex(SESSION_ID_PREFIX+sid+":INFO",Config.session_timeout,info);
+        RedisPool.getRedis().setex(SESSION_ID_PREFIX+sid+":INFO", Config.session_timeout,info);
         log.info(SESSION_ID_PREFIX+sid+":INFO"+" "+info);
         return sid;
     }
@@ -80,7 +56,7 @@ public class RedisSessionManager implements SessionManager{
     @Override
     public  String getSID(String _sid){
 
-        String info=jedisPool.getResource().get(SESSION_ID_PREFIX+_sid+":INFO");
+        String info= RedisPool.getRedis().get(SESSION_ID_PREFIX+_sid+":INFO");
 
         if (info==null){
             return null;
@@ -95,7 +71,7 @@ public class RedisSessionManager implements SessionManager{
                 return info;
             }else{
                 String newinfo=info.substring(0,info.lastIndexOf(" "))+" "+System.currentTimeMillis();
-                jedisPool.getResource().setex(SESSION_ID_PREFIX+_sid+":INFO",Config.session_timeout,newinfo);
+                RedisPool.getRedis().setex(SESSION_ID_PREFIX+_sid+":INFO", Config.session_timeout,newinfo);
                 return newinfo;
             }
 
@@ -107,7 +83,7 @@ public class RedisSessionManager implements SessionManager{
     @Override
     public void delSID(String _sid){
 
-        jedisPool.getResource().del(SESSION_ID_PREFIX+_sid+":INFO");
+        RedisPool.getRedis().del(SESSION_ID_PREFIX+_sid+":INFO");
 
     }
 

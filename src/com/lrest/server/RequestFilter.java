@@ -41,6 +41,14 @@ public class RequestFilter implements ContainerRequestFilter
         System.out.println("Executing REST RequestFilter header >"+requestContext.getUriInfo().getPath());
         System.out.println("Executing REST RequestFilter getMethod >"+requestContext.getMethod());
 
+        //ignore session auth api
+        if (requestContext.getUriInfo().getPath().equalsIgnoreCase("login")
+                ||requestContext.getUriInfo().getPath().equalsIgnoreCase("")
+                ){
+            //go to login  auth sid
+            return;
+        }
+
         if (systemManager.SYSCODE!=1){
             log.error("System error");
             requestContext.abortWith(Response.status(Response.Status.EXPECTATION_FAILED).entity(systemManager.LASTERR).build());
@@ -52,13 +60,7 @@ public class RequestFilter implements ContainerRequestFilter
         }
 
 
-        //ignore session auth api
-        if (requestContext.getUriInfo().getPath().equalsIgnoreCase("login")
-                ||requestContext.getUriInfo().getPath().equalsIgnoreCase("")
-           ){
-            //go to login  auth sid
-            return;
-        }
+
 
         String sid = requestContext.getHeaderString("sessionid");
         if (StringUtils.isNullOrEmpty(sid)){
