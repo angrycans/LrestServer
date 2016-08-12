@@ -13,7 +13,7 @@ public class GuiceModule implements Module {
     @Override
     public void configure(Binder binder) {
 
-        binder.bind(RedisSessionManager.class);
+
         binder.bind(SystemManager.class);
 
         if (Config.use_redis==0) {
