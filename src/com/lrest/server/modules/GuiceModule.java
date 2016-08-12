@@ -15,7 +15,7 @@ public class GuiceModule implements Module {
 
 
         binder.bind(SystemManager.class);
-        
+
 
         System.out.println("GuiceModule binder ok" );
     }

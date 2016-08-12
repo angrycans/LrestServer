@@ -1,4 +1,6 @@
-package com.lrest.server.services;
+package com.lrest.server.services.session;
+
+import com.lrest.server.services.Config;
 
 import javax.inject.Singleton;
 

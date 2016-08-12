@@ -4,7 +4,7 @@ package com.lrest.server.controller;
  * Created by acans on 16/6/21.
  */
 
-import com.lrest.server.services.SessionManager;
+import com.lrest.server.services.session.SessionManager;
 import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.Consumes;

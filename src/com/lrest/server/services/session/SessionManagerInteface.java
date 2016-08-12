@@ -1,4 +1,4 @@
-package com.lrest.server.services;
+package com.lrest.server.services.session;
 
 /**
  * Created by acans on 16/6/23.

@@ -4,7 +4,7 @@ package com.lrest.server;
  * Created by angrycans on 15/7/7.
  */
 
-import com.lrest.server.services.SessionManager;
+import com.lrest.server.services.session.SessionManager;
 import com.lrest.server.services.SystemManager;
 import com.mysql.jdbc.StringUtils;
 import org.slf4j.LoggerFactory;
@@ -83,15 +83,8 @@ public class RequestFilter implements ContainerRequestFilter
 
         }else{
             //auth sid expired
-            log.debug("sid ="+sid);
+
             String authsid= SessionManager.getInstance().getSID(sid);
-            log.debug("sid ="+sid+" authsid="+authsid);
-//            if (Config.use_redis==1){
-//                authsid=redisSessionManager.getSID(sid);
-//            }else{
-//                MemorySessionManager memorySessionManager=new MemorySessionManager();
-//                authsid=memorySessionManager.getSID(sid);
-//            }
 
             if (StringUtils.isNullOrEmpty(authsid)){
                 requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).build());
@@ -99,15 +92,6 @@ public class RequestFilter implements ContainerRequestFilter
             }
 
         }
-
-        //RedisSessionManager rsm=new RedisSessionManager();
-        //log.info(rsm.createSID("1",2));
-//
-//        Iterator it1 = requestheaders.entrySet().iterator();
-//        while (it1.hasNext()) {
-//            Map.Entry pairs = (Map.Entry) it1.next();
-//            System.out.println("  " + pairs.getKey() + " = " + pairs.getValue());
-//        }
 
 
 
@@ -123,13 +107,8 @@ public class RequestFilter implements ContainerRequestFilter
             System.out.println("  " + pairs.getKey() + " = " + pairs.getValue());
         }
 
-
-        System.out.println("Inject sessionService 0"+sessionService);
-        System.out.println("Inject sessionService 1"+sessionService.get("randmonsid"));
 */
-//        if (requestheaders.get("session-id")==null){
-//            sessionService.set("randmonsid", new SessionInfo("aaa"));
-//        }
+
     }
 
 

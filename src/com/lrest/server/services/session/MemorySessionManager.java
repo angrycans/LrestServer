@@ -1,5 +1,6 @@
-package com.lrest.server.services;
+package com.lrest.server.services.session;
 
+import com.lrest.server.services.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
