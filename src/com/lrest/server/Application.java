@@ -4,31 +4,21 @@ package com.lrest.server;
  * Created by angrycans on 15/7/7.
  */
 
-import javax.inject.Inject;
-import javax.servlet.annotation.WebServlet;
-import javax.ws.rs.ApplicationPath;
-
-
-import com.lrest.server.services.DB;
-import com.lrest.server.modules.GuiceModule;
-
+import com.google.inject.Guice;
 import com.google.inject.Injector;
-
+import com.lrest.server.modules.GuiceModule;
 import com.lrest.server.providers.GsonJerseyProvider;
-import com.lrest.server.services.RedisSessionManager;
 import org.glassfish.hk2.api.ServiceLocator;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.jvnet.hk2.guice.bridge.api.GuiceBridge;
 import org.jvnet.hk2.guice.bridge.api.GuiceIntoHK2Bridge;
-
-
-
-import com.google.inject.Guice;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+import javax.inject.Inject;
+import javax.servlet.annotation.WebServlet;
+import javax.ws.rs.ApplicationPath;
+import java.util.Properties;
 
 @WebServlet(loadOnStartup = 1)
 @ApplicationPath("/api/*")
@@ -41,7 +31,13 @@ public class Application extends ResourceConfig {
 
         packages("com.lrest.server");
 
-        System.out.println("Registering injectables...");
+
+        Properties props = System.getProperties();
+        log.debug("Current working directory is " + props.getProperty("user.dir"));
+        log.info("Current working directory is " + props.getProperty("user.dir"));
+        //PropertyConfigurator.configure("log4j.properties");
+
+        log.info("Registering injectables...");
 
 
         Injector injector = Guice.createInjector(new GuiceModule());

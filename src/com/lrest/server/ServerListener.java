@@ -5,15 +5,16 @@ import com.lrest.server.services.Config;
 import com.lrest.server.services.DB;
 import com.lrest.server.services.RedisPool;
 import com.lrest.server.services.SystemManager;
-//import org.eclipse.persistence.annotations.CascadeOnDelete;
+
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
+
+//import org.eclipse.persistence.annotations.CascadeOnDelete;
 
 @WebListener
 public class ServerListener implements ServletContextListener {
@@ -26,6 +27,8 @@ public class ServerListener implements ServletContextListener {
 
 		Config.getInsatnce();
 
+
+
 		if (Config.use_redis==1){
 			RedisPool.getInsatnce();
 		}
@@ -37,11 +40,18 @@ public class ServerListener implements ServletContextListener {
 		}
 
 
+
 	}
 
 	@Override
 	public void contextDestroyed(ServletContextEvent event) {
 		context = event.getServletContext();
+
+		if (Config.use_mysql==1) {
+
+			DB.quit();
+			log.info("DB POOL closed!");
+		}
 
 		log.info("Server closed!");
 	}

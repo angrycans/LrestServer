@@ -24,7 +24,9 @@ public class DatabasePool {
             this.databaseConfiguration.setAutoCommit(true);
             this.databaseConfiguration.setMaxLifetime(120000000L);
             this.databaseConfiguration.setConnectionTestQuery("SELECT 1");
+            this.databaseConfiguration.setPoolName("ychlrestserver");
             this.database = new HikariDataSource(this.databaseConfiguration);
+
         }
         catch (Exception e)
         {

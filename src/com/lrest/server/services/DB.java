@@ -5,11 +5,12 @@ package com.lrest.server.services;
  */
 
 import com.zaxxer.hikari.HikariDataSource;
-
 import org.slf4j.LoggerFactory;
 
 import javax.inject.Singleton;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 @Singleton
 public class DB {
@@ -68,6 +69,12 @@ public class DB {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public static void quit(){
+
+        dataSource.close();
+        //System.out.println("database pool close");
     }
 
     public HikariDataSource getDataSource()

@@ -13,6 +13,10 @@ public class SystemManager {
     private static  int MYSQLCODE=0;
     public static  String LASTERR;
 
+    public SystemManager(){
+        SYSCODE=1;
+    }
+
     public static  void putCode(int _e,int _type,String _desc){
         if (_type==1){
             MYSQLCODE=_e;
@@ -22,11 +26,12 @@ public class SystemManager {
 
         LASTERR=_desc;
 
-        if (REDISCODE==1&&MYSQLCODE==1){
-            SYSCODE=1;
-        }else{
+
+        if (_e>1){
             SYSCODE=-1;
         }
+
+
     }
 
 

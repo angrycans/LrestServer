@@ -9,7 +9,7 @@ import java.util.UUID;
  * Created by acans on 16/6/21.
  */
 
-public class RedisSessionManager implements SessionManager {
+public class RedisSessionManager implements SessionManagerInteface{
     private static  final Logger log = LoggerFactory.getLogger("RedisSessionManager");
     //redis schema
     //LSESSION:ID:INFO  {token userid last_at} expired
@@ -24,6 +24,8 @@ public class RedisSessionManager implements SessionManager {
     //private static JedisPool jedisPool;
 
     public RedisSessionManager() {
+
+        log.info("RedisSessionManager init");
         if (Config.use_redis==1) {
             this.expirationUpdateInterval = 30 * 1000;
             this.sessionTimeOut = 1 * 60 * 1000;

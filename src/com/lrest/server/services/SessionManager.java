@@ -1,13 +1,33 @@
 package com.lrest.server.services;
 
+import javax.inject.Singleton;
+
 /**
  * Created by acans on 16/6/23.
  */
+@Singleton
+public  class SessionManager {
 
-public abstract interface SessionManager {
-    public  String createSID(String _token,String _uid);
-    public  String getSID(String  _sid);
-    public void delSID(String _sid);
+
+    private   static SessionManagerInteface sessionManager;
+
+
+    public static SessionManagerInteface getInstance(){
+
+
+        if (sessionManager==null){
+            if (Config.use_redis==1){
+                sessionManager=new RedisSessionManager();
+
+            }else{
+                sessionManager=new MemorySessionManager();
+            }
+        }
+
+        return  sessionManager;
+
+
+    };
 
 
 }

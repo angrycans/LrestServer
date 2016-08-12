@@ -48,7 +48,7 @@ public class RedisPool {
         }catch (Exception e){
             //e.printStackTrace();
             SystemManager.putCode(-1,2,"Redis connect error");
-            log.error("-------------- Redis init error----------------"+SystemManager.dump());
+            log.error("-------------- Redis init error----------------"+ SystemManager.dump());
         }
 
 
