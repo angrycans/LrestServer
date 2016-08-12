@@ -15,11 +15,7 @@ public class GuiceModule implements Module {
 
 
         binder.bind(SystemManager.class);
-
-        if (Config.use_redis==0) {
-            binder.bind(MemorySessionManager.class);
-        }
-
+        
 
         System.out.println("GuiceModule binder ok" );
     }
