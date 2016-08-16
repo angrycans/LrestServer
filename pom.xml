@@ -206,7 +206,7 @@
                         <generate>
                             <!-- Generation flags: See advanced configuration properties -->
                             <records>false</records>
-                            <pojos>true</pojos>
+                            <pojos>false</pojos>
                             <daos>false</daos>
 
                         </generate>
