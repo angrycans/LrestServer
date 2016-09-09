@@ -12,7 +12,7 @@ import java.util.UUID;
  * Created by acans on 16/6/21.
  */
 
-public class MemorySessionManager implements SessionManagerInteface{
+public class MemorySessionManager implements SessionManagerInteface {
     private static  final Logger log = LoggerFactory.getLogger("MemorySessionManager");
 
     private   HashMap<String, String> session = new HashMap<String, String>();
@@ -76,6 +76,9 @@ public class MemorySessionManager implements SessionManagerInteface{
 
             session.remove(_sid);
             return  null;
+        }else{
+
+            //续租
         }
 
 
